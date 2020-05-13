@@ -8,7 +8,7 @@ const IndexPage = ({ data }) => (
   <Layout>
     <Masonry className="showcase">
       {data.allDatoCmsWork.edges.map(({ node: work }) => (
-        <div key={work.id} className="showcase__item">
+        <div key={work.id} className="showcase__item" style="max-height:200px">
           <figure className="card">
             <Link to={`/works/${work.slug}`} className="card__image">
               <Img fluid={work.coverImage.fluid} />
@@ -40,7 +40,7 @@ export const query = graphql`
           slug
           excerpt
           coverImage {
-            fluid(maxWidth: 450, maxHeight: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
+            fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsSizes
             }
           }
