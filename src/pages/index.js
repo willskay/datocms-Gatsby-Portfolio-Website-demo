@@ -8,7 +8,7 @@ const IndexPage = ({ data }) => (
   <Layout>
     <Masonry className="showcase">
       {data.allDatoCmsWork.edges.map(({ node: work }) => (
-        <div key={work.id} className="showcase__item" maxHeight:70>
+        <div key={work.id} className="showcase__item" maxHeight:"70px">
           <figure className="card">
             <Link to={`/works/${work.slug}`} className="card__image">
               <Img fluid={work.coverImage.fluid} />
